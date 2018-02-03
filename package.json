@@ -1,0 +1,22 @@
+{
+  "name": "egg-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "egg-bin dev"
+  },
+  "author": "ygj",
+  "license": "ISC",
+  "dependencies": {
+    "egg": "^2.2.0",
+    "egg-mysql": "^3.0.0",
+    "egg-redis": "^1.0.2",
+    "egg-validate": "^1.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.3.7"
+  }
+}
