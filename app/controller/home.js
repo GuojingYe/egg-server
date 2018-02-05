@@ -4,6 +4,8 @@ class homeController extends Controller {
     async getUserInfo() {
         const {ctx} = this;
 
+        console.log('result', ctx.helper.doAdd(1, 2));
+
         const userId = ctx.query.userId;
         if (!userId) {
             return ctx.doError(422, '请求参数无效');
@@ -14,7 +16,7 @@ class homeController extends Controller {
         console.log('name:', name);
 
         if (!user.userId) {
-            return ctx.doError('用户不存在');
+            return ctx.doError(404, '用户不存在');
         }
         ctx.doResponse(user);
     }
