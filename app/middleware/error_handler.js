@@ -1,11 +1,11 @@
 module.exports = () => {
     return async function errorHandler(ctx, next) {
         try {
-            ctx.getLogger('accessLogger').info
-            ('param:', JSON.stringify(ctx.param), 'query:', JSON.stringify(ctx.query), 'body:', JSON.stringify(ctx.body));
+            // 日志记录请求体
+            ctx.getLogger('accessLogger').info('request_body:', JSON.stringify(ctx.request.body));
             await next();
         } catch (err) {
-            // 所有的异常都在 app 上触发一个 error 事件，框架会记录一条错误日志
+            // 所有的异常都在 api 上触发一个 error 事件，框架会记录一条错误日志
             ctx.app.emit('error', err, ctx);
 
             const status = err.status || 500;

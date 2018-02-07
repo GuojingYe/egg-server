@@ -20,5 +20,20 @@ module.exports = appInfo => {
                 file: path.join(appInfo.root, 'logs/access-logs/access.log'),
             },
         },
+        oss: {
+            clients: {
+                bucket1: {
+                    bucket: '',
+                },
+                bucket2: {
+                    bucket: '',
+                },
+            },
+            default: {
+                endpoint: '',
+                accessKeyId: '',
+                accessKeySecret: '',
+            },
+        }
     }
 };

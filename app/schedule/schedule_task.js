@@ -14,7 +14,7 @@ class UpdateCache extends Subscription {
         // const res = await this.ctx.curl('http://www.api.com/cache', {
         //     dataType: 'json',
         // });
-        // this.ctx.app.cache = res.data;
+        // this.ctx.api.cache = res.data;
 
         console.log('scheduleTask execute now!');
     }
