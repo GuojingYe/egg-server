@@ -62,4 +62,5 @@ typings/
 
 # extend
 .idea
+.vscode
 run/
