@@ -1,39 +1,41 @@
+'use strict';
+
 const path = require('path');
 
 module.exports = appInfo => {
-    return {
-        keys: 'yggjingkey',
-        // 加载 errorHandler 中间件
-        middleware: ['errorHandler'],
-        // 只对 /api 前缀的 url 路径生效
-        // errorHandler: {
-        //     match: '/api',
-        // },
+  return {
+    keys: 'yggjingkey',
+    // 加载 errorHandler 中间件
+    middleware: [ 'errorHandler' ],
+    // 只对 /api 前缀的 url 路径生效
+    // errorHandler: {
+    //     match: '/api',
+    // },
 
-        security: {
-            csrf: {
-                enable: false,
-            }
+    security: {
+      csrf: {
+        enable: false,
+      },
+    },
+    customLogger: {
+      accessLogger: {
+        file: path.join(appInfo.root, 'logs/access-logs/access.log'),
+      },
+    },
+    oss: {
+      clients: {
+        bucket1: {
+          bucket: '',
         },
-        customLogger: {
-            accessLogger: {
-                file: path.join(appInfo.root, 'logs/access-logs/access.log'),
-            },
+        bucket2: {
+          bucket: '',
         },
-        oss: {
-            clients: {
-                bucket1: {
-                    bucket: '',
-                },
-                bucket2: {
-                    bucket: '',
-                },
-            },
-            default: {
-                endpoint: '',
-                accessKeyId: '',
-                accessKeySecret: '',
-            },
-        }
-    }
+      },
+      default: {
+        endpoint: '',
+        accessKeyId: '',
+        accessKeySecret: '',
+      },
+    },
+  };
 };
