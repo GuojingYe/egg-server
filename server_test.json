@@ -1,0 +1,9 @@
+{
+  "apps" : [{
+    "name": "nail_mall",
+    "script": "./server.js",
+    "env": {
+      "EGG_SERVER_ENV": "unittest"
+    }
+  }]
+}
