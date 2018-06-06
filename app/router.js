@@ -8,4 +8,5 @@ module.exports = app => {
 
   // 管理后台接口
   router.post('/manager/article', controller.articleManager.updateArticle);
+
 };
