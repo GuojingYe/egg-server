@@ -1,6 +1,6 @@
 'use strict';
 
-const Service = require('egg').service;
+const Service = require('egg').Service;
 
 class articleService extends Service {
   // 编辑文章
